@@ -40,15 +40,15 @@ const Contact = () => {
               <div className="flex items-center gap-3 flex-1 p-4 rounded-xl bg-secondary/50">
                 <Mail className="w-5 h-5 text-primary" />
                 <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium">hello@alexchen.dev</p>
+                  <p className="text-sm text-muted-foreground">Phone</p>
+                  <p className="font-medium">8652181562</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 flex-1 p-4 rounded-xl bg-secondary/50">
                 <MapPin className="w-5 h-5 text-primary" />
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-medium">San Francisco, CA</p>
+                  <p className="font-medium">Mumbai, India</p>
                 </div>
               </div>
             </div>

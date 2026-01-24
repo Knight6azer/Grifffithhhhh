@@ -13,7 +13,7 @@ const Footer = () => {
         >
           <p className="text-muted-foreground text-sm flex items-center gap-1">
             Built with <Heart className="w-4 h-4 text-primary fill-primary" /> by{" "}
-            <span className="text-foreground font-medium">Alex Chen</span>
+            <span className="text-foreground font-medium">Ujjwal Tiwari</span>
           </p>
           <p className="font-mono text-sm text-muted-foreground">
             © {new Date().getFullYear()} All rights reserved.

@@ -6,23 +6,23 @@ import { Code2, Palette, Rocket, Zap } from "lucide-react";
 const highlights = [
   {
     icon: Code2,
-    title: "Clean Code",
-    description: "Writing maintainable, scalable code",
+    title: "Data Science",
+    description: "Python, NumPy, Pandas, ML",
   },
   {
     icon: Palette,
-    title: "UI/UX Design",
-    description: "Creating beautiful interfaces",
+    title: "Problem Solving",
+    description: "Logical reasoning & analysis",
   },
   {
     icon: Rocket,
-    title: "Performance",
-    description: "Optimized for speed & efficiency",
+    title: "Embedded Systems",
+    description: "Arduino, Raspberry Pi, IoT",
   },
   {
     icon: Zap,
-    title: "Modern Stack",
-    description: "Latest tools & technologies",
+    title: "Team Leadership",
+    description: "R&D Cell Co-Head",
   },
 ];
 
@@ -55,18 +55,18 @@ const About = () => {
             className="glass-card p-8"
           >
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              I'm a developer who loves turning complex problems into simple, 
-              beautiful solutions. With 5+ years of experience in web development, 
-              I specialize in building modern, responsive applications.
+              I'm an Electronics & Computer Science Engineering student with hands-on 
+              experience in Data Analysis, Python, and Embedded Systems. I'm passionate 
+              about solving complex problems through data-driven solutions.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              My journey began with curiosity about how things work on the web. 
-              Today, I work with cutting-edge technologies to create impactful 
-              digital experiences that users love.
+              As the Co-Head of the R&D Cell at Shree L.R. Tiwari College of Engineering, 
+              I lead innovative tech initiatives and participate in hackathons. My journey 
+              includes internships in Data Analysis, Embedded Systems, and Python development.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies, 
-              contributing to open source, or sharing knowledge with the community.
+              I aspire to become a Data Scientist with a focus on AI and ML applications, 
+              building impactful solutions that make a difference.
             </p>
           </motion.div>
 

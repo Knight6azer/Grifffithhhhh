@@ -5,55 +5,55 @@ import { ExternalLink, Github, Folder } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Emotional Wellbeing Recommender Model",
     description:
-      "A full-stack e-commerce solution with real-time inventory management, Stripe integration, and admin dashboard.",
-    tech: ["Next.js", "TypeScript", "Prisma", "Stripe"],
+      "A machine learning model that analyzes emotional patterns and provides personalized wellbeing recommendations using NLP and sentiment analysis techniques.",
+    tech: ["Python", "Machine Learning", "NLP", "Pandas"],
     github: "#",
     live: "#",
     featured: true,
   },
   {
-    title: "AI Chat Application",
+    title: "Smart Home Security System",
     description:
-      "Real-time chat application powered by AI with natural language processing and sentiment analysis.",
-    tech: ["React", "Node.js", "OpenAI", "Socket.io"],
+      "Arduino-based IoT security device with motion sensors, camera integration, and real-time alerts for comprehensive home monitoring.",
+    tech: ["Arduino", "IoT", "Sensors", "C++"],
     github: "#",
     live: "#",
     featured: true,
   },
   {
-    title: "Task Management App",
+    title: "Acid Rain Analysis Model",
     description:
-      "Collaborative project management tool with drag-and-drop, team features, and analytics.",
-    tech: ["React", "Redux", "Express", "MongoDB"],
+      "Data visualization and predictive modeling project analyzing acid rain patterns using machine learning basics and statistical methods.",
+    tech: ["Python", "Matplotlib", "Pandas", "ML"],
     github: "#",
     live: "#",
     featured: false,
   },
   {
-    title: "Portfolio Generator",
+    title: "Personal Portfolio Website",
     description:
-      "Dynamic portfolio builder with customizable themes and SEO optimization.",
-    tech: ["Next.js", "Tailwind", "MDX"],
+      "A responsive portfolio website showcasing projects and skills with modern design and smooth animations.",
+    tech: ["HTML", "CSS", "JavaScript"],
     github: "#",
     live: "#",
     featured: false,
   },
   {
-    title: "Weather Dashboard",
+    title: "Vegetable Vendor App",
     description:
-      "Beautiful weather app with location-based forecasts and interactive maps.",
-    tech: ["React", "Chart.js", "Mapbox"],
+      "Python-based ordering and billing system for vegetable vendors with JSON storage for inventory and sales management.",
+    tech: ["Python", "JSON", "CLI"],
     github: "#",
     live: "#",
     featured: false,
   },
   {
-    title: "Code Snippet Manager",
+    title: "Business Analytical Website",
     description:
-      "Developer tool for organizing, sharing, and syncing code snippets.",
-    tech: ["Vue.js", "Firebase", "Monaco Editor"],
+      "A web platform for business analytics with data visualization dashboards and reporting features.",
+    tech: ["HTML", "CSS", "JavaScript", "Charts"],
     github: "#",
     live: "#",
     featured: false,

@@ -4,20 +4,20 @@ import { useRef } from "react";
 
 const skillCategories = [
   {
-    title: "Frontend",
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion"],
+    title: "Programming",
+    skills: ["Python", "C", "C++", "SQL", "JavaScript", "HTML/CSS"],
   },
   {
-    title: "Backend",
-    skills: ["Node.js", "Python", "PostgreSQL", "GraphQL", "REST APIs"],
+    title: "Data Science",
+    skills: ["NumPy", "Pandas", "Matplotlib", "Machine Learning", "Excel", "Data Visualization"],
   },
   {
-    title: "Tools & DevOps",
-    skills: ["Git", "Docker", "AWS", "Vercel", "CI/CD"],
+    title: "Embedded Systems",
+    skills: ["Arduino", "Raspberry Pi", "Circuit Simulation", "IoT", "Microcontrollers"],
   },
   {
-    title: "Design",
-    skills: ["Figma", "UI/UX", "Responsive Design", "Accessibility", "Animation"],
+    title: "Soft Skills",
+    skills: ["Logical Reasoning", "Problem Solving", "Team Leadership", "Communication", "Mentoring"],
   },
 ];
 

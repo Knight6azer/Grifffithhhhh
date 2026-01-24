@@ -39,7 +39,7 @@ const Hero = () => {
           className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
         >
           <span className="text-gradient-hero">Hi, I'm </span>
-          <span className="gradient-text">Alex Chen</span>
+          <span className="gradient-text">Ujjwal Tiwari</span>
         </motion.h1>
 
         <motion.p
@@ -48,9 +48,9 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8"
         >
-          A passionate{" "}
-          <span className="text-foreground font-medium">Full-Stack Developer</span>{" "}
-          crafting exceptional digital experiences with modern technologies.
+          An aspiring{" "}
+          <span className="text-foreground font-medium">Data Scientist</span>{" "}
+          with expertise in Python, Machine Learning, and Embedded Systems.
         </motion.p>
 
         <motion.div

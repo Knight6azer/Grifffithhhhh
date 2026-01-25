@@ -9,8 +9,7 @@ const projects = [
     description:
       "A machine learning model that analyzes emotional patterns and provides personalized wellbeing recommendations using NLP and sentiment analysis techniques.",
     tech: ["Python", "Machine Learning", "NLP", "Pandas"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Knight6azer/Emotional-Wellbeing-Recommender",
     featured: true,
   },
   {
@@ -18,8 +17,7 @@ const projects = [
     description:
       "Arduino-based IoT security device with motion sensors, camera integration, and real-time alerts for comprehensive home monitoring.",
     tech: ["Arduino", "IoT", "Sensors", "C++"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Knight6azer/Smart-Home-Security-System",
     featured: true,
   },
   {
@@ -27,8 +25,7 @@ const projects = [
     description:
       "Data visualization and predictive modeling project analyzing acid rain patterns using machine learning basics and statistical methods.",
     tech: ["Python", "Matplotlib", "Pandas", "ML"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Knight6azer/Acid-Rain-Analysis",
     featured: false,
   },
   {
@@ -36,8 +33,7 @@ const projects = [
     description:
       "A responsive portfolio website showcasing projects and skills with modern design and smooth animations.",
     tech: ["HTML", "CSS", "JavaScript"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Knight6azer/Portfolio-Website",
     featured: false,
   },
   {
@@ -45,8 +41,7 @@ const projects = [
     description:
       "Python-based ordering and billing system for vegetable vendors with JSON storage for inventory and sales management.",
     tech: ["Python", "JSON", "CLI"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Knight6azer/Vegetable-Vendor-App",
     featured: false,
   },
   {
@@ -54,8 +49,7 @@ const projects = [
     description:
       "A web platform for business analytics with data visualization dashboards and reporting features.",
     tech: ["HTML", "CSS", "JavaScript", "Charts"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Knight6azer/Business-Analytics-Website",
     featured: false,
   },
 ];
@@ -107,19 +101,13 @@ const Projects = () => {
                   <div className="flex gap-3">
                     <motion.a
                       href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
                     >
                       <Github className="w-5 h-5" />
-                    </motion.a>
-                    <motion.a
-                      href={project.live}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
-                    >
-                      <ExternalLink className="w-5 h-5" />
                     </motion.a>
                   </div>
                 </div>
@@ -162,20 +150,14 @@ const Projects = () => {
             >
               <div className="flex items-center justify-between mb-4">
                 <Folder className="w-10 h-10 text-primary" />
-                <div className="flex gap-2">
-                  <a
-                    href={project.github}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={project.live}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                  </a>
-                </div>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Github className="w-5 h-5" />
+                </a>
               </div>
               <h4 className="font-semibold text-lg mb-2">{project.title}</h4>
               <p className="text-muted-foreground text-sm flex-grow mb-4">

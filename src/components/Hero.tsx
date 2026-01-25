@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -60,9 +60,9 @@ const Hero = () => {
           className="flex items-center justify-center gap-4 mb-12"
         >
           {[
-            { icon: Github, href: "#", label: "GitHub" },
-            { icon: Linkedin, href: "#", label: "LinkedIn" },
-            { icon: Twitter, href: "#", label: "Twitter" },
+            { icon: Github, href: "https://github.com/Knight6azer", label: "GitHub" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/ujjwal-tiwari-6a55122a7/", label: "LinkedIn" },
+            { icon: Mail, href: "mailto:ujjwaltiwari@email.com", label: "Email" },
           ].map((social) => (
             <motion.a
               key={social.label}

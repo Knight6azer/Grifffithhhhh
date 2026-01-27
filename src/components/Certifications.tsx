@@ -3,64 +3,64 @@ import { Award, ExternalLink } from "lucide-react";
 
 const certifications = [
   {
-    name: "Python for Data Science",
-    issuer: "IBM",
-    year: "2024",
-    link: "#",
+    name: "Green Skills and Artificial Intelligence",
+    issuer: "Edunet Foundation",
+    type: "Certificate of Completion",
+    link: "/certificates/green-skills-ai-edunet.pdf",
   },
   {
-    name: "Machine Learning Fundamentals",
+    name: "Pyverse - Application Creation Using Python",
+    issuer: "Infosys Springboard",
+    type: "Certificate of Completion",
+    link: "/certificates/pyverse-application.pdf",
+  },
+  {
+    name: "Software Engineering",
+    issuer: "Infosys Springboard",
+    type: "Certificate of Completion",
+    link: "/certificates/software-engineering-infosys.pdf",
+  },
+  {
+    name: "Open Source Models with Hugging Face",
+    issuer: "Simplilearn",
+    type: "Certificate of Completion",
+    link: "/certificates/huggingface-simplilearn.pdf",
+  },
+  {
+    name: "Edith - AI Agent Buildathon",
+    issuer: "Technium (SLRTCE)",
+    type: "Certificate of Participation",
+    link: "/certificates/edith-ai-buildathon.jpeg",
+  },
+  {
+    name: "Programming in Python Beginner",
+    issuer: "Infosys Springboard",
+    type: "Certificate of Completion",
+    link: "/certificates/python-beginner-infosys.pdf",
+  },
+  {
+    name: "Dictionaries in Python Programming",
+    issuer: "Infosys Springboard",
+    type: "Certificate of Completion",
+    link: "/certificates/dictionaries-python-infosys.pdf",
+  },
+  {
+    name: "Python Program 101",
+    issuer: "Infosys Springboard",
+    type: "Certificate of Completion",
+    link: "/certificates/python-101-infosys.pdf",
+  },
+  {
+    name: "Python for Beginners: Variables and Strings",
     issuer: "Coursera",
-    year: "2024",
-    link: "#",
+    type: "Certificate of Completion",
+    link: "/certificates/python-variables-coursera.pdf",
   },
   {
-    name: "Data Analysis with Pandas",
-    issuer: "DataCamp",
-    year: "2024",
-    link: "#",
-  },
-  {
-    name: "Deep Learning Specialization",
-    issuer: "DeepLearning.AI",
-    year: "2023",
-    link: "#",
-  },
-  {
-    name: "Arduino & IoT Fundamentals",
-    issuer: "Arduino",
-    year: "2023",
-    link: "#",
-  },
-  {
-    name: "Embedded Systems Design",
-    issuer: "Udemy",
-    year: "2023",
-    link: "#",
-  },
-  {
-    name: "SQL for Data Science",
+    name: "Python for Beginners: Data Structures",
     issuer: "Coursera",
-    year: "2023",
-    link: "#",
-  },
-  {
-    name: "NumPy & Scientific Computing",
-    issuer: "DataCamp",
-    year: "2023",
-    link: "#",
-  },
-  {
-    name: "Web Development Bootcamp",
-    issuer: "Udemy",
-    year: "2022",
-    link: "#",
-  },
-  {
-    name: "Git & Version Control",
-    issuer: "Atlassian",
-    year: "2022",
-    link: "#",
+    type: "Certificate of Completion",
+    link: "/certificates/python-datastructures-coursera.pdf",
   },
 ];
 
@@ -88,13 +88,16 @@ const Certifications = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {certifications.map((cert, index) => (
-            <motion.div
+            <motion.a
               key={cert.name}
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="glass-card-hover p-5 group cursor-pointer"
+              className="glass-card-hover p-5 group cursor-pointer block"
             >
               <div className="flex items-start gap-4">
                 <div className="p-2 rounded-lg bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
@@ -105,12 +108,15 @@ const Certifications = () => {
                     {cert.name}
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    {cert.issuer} • {cert.year}
+                    {cert.issuer}
+                  </p>
+                  <p className="text-xs text-primary/70 mt-1">
+                    {cert.type}
                   </p>
                 </div>
                 <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>

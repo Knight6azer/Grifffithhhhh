@@ -4,8 +4,7 @@ const navItems = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Certifications", href: "#certifications" },
-  { name: "Blog", href: "#blog" },
+  { name: "Experience", href: "#experience" }, // Added Experience
   { name: "Contact", href: "#contact" },
 ];
 
@@ -15,31 +14,33 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, delay: 0.2 }}
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50"
+      className="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-[#0a192f]/80 backdrop-blur-md"
     >
-      <div className="floating-nav flex items-center gap-8">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
         <a
           href="#"
-          className="font-mono text-primary font-semibold text-lg"
+          className="font-mono text-[#64ffda] font-bold text-xl tracking-tight"
         >
-          {"<Dev />"}
+          {"<UT />"}
         </a>
-        <div className="hidden sm:flex items-center gap-6">
+        <div className="hidden sm:flex items-center gap-8">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm font-medium"
+              className="font-mono text-sm text-slate-300 hover:text-[#64ffda] transition-colors duration-300"
             >
+              <span className="text-[#64ffda] mr-1">0{navItems.indexOf(item) + 1}.</span>
               {item.name}
             </a>
           ))}
         </div>
         <a
-          href="#contact"
-          className="bg-primary/10 border border-primary/30 text-primary px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/20 transition-all duration-300"
+          href="/Resume_UT.pdf"
+          target="_blank"
+          className="font-mono border border-[#64ffda] text-[#64ffda] px-4 py-2 rounded-md text-sm hover:bg-[#64ffda]/10 transition-all duration-300"
         >
-          Hire Me
+          Resume
         </a>
       </div>
     </motion.nav>

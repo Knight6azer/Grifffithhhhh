@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="flex items-center gap-2">
             <Sword className="w-5 h-5 text-primary" />
             <span className="font-display text-lg font-bold tracking-wider text-foreground">
-              ANIME NEXUS
+              SPIRIT BLOSSOM HUB
             </span>
           </div>
           <div className="flex gap-6 font-body text-sm text-muted-foreground">
@@ -19,7 +19,7 @@ const Footer = () => {
             ))}
           </div>
           <p className="text-xs text-muted-foreground font-body">
-            © 2026 Anime Nexus. All rights reserved.
+            © 2026 Spirit Blossom Hub. All rights reserved.
           </p>
         </div>
       </div>

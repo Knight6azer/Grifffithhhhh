@@ -1,7 +1,8 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "spirit-blossom-hub",
   "private": true,
-  "version": "0.0.0",
+  "description": "A comprehensive hub for Spirit Blossom enthusiasts, featuring character profiles, tier lists, and community resources.",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

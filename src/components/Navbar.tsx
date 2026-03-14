@@ -40,7 +40,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-2">
           <Sword className="w-5 h-5 text-primary" />
           <span className="font-display text-lg font-bold tracking-wider text-foreground">
-            ANIME NEXUS
+            SPIRIT BLOSSOM HUB
           </span>
         </Link>
         <div className="hidden md:flex items-center gap-6 font-body text-sm uppercase tracking-wider">

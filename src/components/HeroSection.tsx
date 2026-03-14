@@ -32,8 +32,8 @@ const HeroSection = () => {
             ))}
           </div>
 
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-wider text-glow-crimson text-foreground mb-4">
-            ANIME NEXUS
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-wider text-glow-crimson text-foreground mb-4 uppercase">
+            Spirit Blossom Hub
           </h1>
           <p className="font-body text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 tracking-wide">
             The ultimate battleground for anime knowledge, power rankings, and community. 

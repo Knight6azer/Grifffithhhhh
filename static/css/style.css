@@ -1,0 +1,121 @@
+:root {
+    --primary: #d4a5f9;
+    --primary-dark: #b18cdf;
+    --secondary: #a2d2ff;
+    --accent: #ffafcc;
+    --bg-dark: #121216;
+    --bg-card: rgba(30, 30, 40, 0.7);
+    --text-light: #f8f9fa;
+    --text-muted: #adb5bd;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Navbar */
+.glass-nav {
+    background: rgba(18, 18, 22, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1rem 0;
+}
+
+.nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary) !important;
+    background: var(--glass-bg);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    padding: 120px 0 80px;
+    background: radial-gradient(circle at top right, rgba(212, 165, 249, 0.1), transparent),
+                radial-gradient(circle at bottom left, rgba(162, 210, 255, 0.1), transparent);
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+/* Cards */
+.glass-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(212, 165, 249, 0.1);
+}
+
+/* Buttons */
+.btn-premium {
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    border: none;
+    color: var(--bg-dark);
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.btn-premium:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(212, 165, 249, 0.4);
+    color: var(--bg-dark);
+}
+
+/* Footer */
+.glass-footer {
+    border-top: 1px solid var(--glass-border);
+    background: rgba(18, 18, 22, 0.5);
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Layout Utilities */
+.section-padding {
+    padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}

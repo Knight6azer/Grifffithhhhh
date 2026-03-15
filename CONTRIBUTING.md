@@ -14,15 +14,17 @@ Thank you for your interest in contributing to Spirit Blossom Hub! We welcome co
 
 ## 💻 Technical Guidelines
 
-- **Style Guide**: We use ESLint and Prettier for code formatting.
-- **Components**: Use Tailwind CSS and shadcn/ui for UI elements.
-- **TypeScript**: Ensure all new code is strictly typed.
+- **Style Guide**: Follow PEP 8 for Python code style.
+- **Type Hints**: Use type hints for better code maintainability.
+- **Templates**: Use Jinja2 templating with proper escaping.
 - **Commit Messages**: Use [Conventional Commits](https://www.conventionalcommits.org/) (e.g., `feat: add character filter`, `fix: resolve mobile overflow`).
 
 ## 🛠️ Local Development
 
 1. Fork and clone the repo.
-2. Run `npm install`.
-3. Create a branch: `git checkout -b feature/your-feature-name`.
-4. Run `npm run dev` to see changes live.
-5. Push to your fork and submit a PR.
+2. Set up a virtual environment: `python -m venv venv`
+3. Activate the environment: `source venv/bin/activate` (Windows: `venv\Scripts\activate`)
+4. Install dependencies: `pip install -r requirements.txt`
+5. Set up your `.env` file with Supabase credentials
+6. Run the development server: `python main.py`
+7. Test your changes and ensure they work correctly.

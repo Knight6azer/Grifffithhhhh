@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="icon" href="/public/favicon.ico">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            min-height: 100vh;
+        }
+        .nav {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav a:hover, .nav a.active {
+            background: #667eea;
+            color: white;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .tier-list {
+            margin-bottom: 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .tier-header {
+            background: #667eea;
+            color: white;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .tier-characters {
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .character-tag {
+            background: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .tier-s {
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+        }
+        .tier-a {
+            background: linear-gradient(45deg, #4ade80, #22c55e);
+        }
+        .tier-b {
+            background: linear-gradient(45deg, #60a5fa, #3b82f6);
+        }
+        .tier-c {
+            background: linear-gradient(45deg, #f87171, #ef4444);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/characters">Character Hub</a></li>
+            <li><a href="/tier-lists" class="active">Tier Lists</a></li>
+            <li><a href="/resources">Resources</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h1>Tier Lists</h1>
+        <p>Real-time tracking of character standings and community ratings.</p>
+
+        {% for tier_list in tier_lists %}
+        <div class="tier-list">
+            <div class="tier-header">{{ tier_list.name }}</div>
+            <div class="tier-characters">
+                {% for character in tier_list.characters %}
+                <span class="character-tag tier-{{ character.tier.lower() }}">{{ character.name }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+        {% if not tier_lists %}
+        <p>No tier lists found. Please check your database connection.</p>
+        {% endif %}
+    </main>
+</body>
+</html>

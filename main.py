@@ -6,7 +6,25 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-app = FastAPI(title="Spirit Blossom Hub", description="A comprehensive platform for Spirit Blossom enthusiasts")
+app = FastAPI(
+    title="Spirit Blossom Hub",
+    description="A comprehensive platform for Spirit Blossom enthusiasts to explore character profiles, track meta-tier lists, and engage with community resources.",
+    version="2.0.0",
+    contact={
+        "name": "Spirit Blossom Hub Team",
+        "url": "https://github.com/Knight6azer/Grifffithhhhh",
+    },
+    license_info={
+        "name": "MIT License",
+        "url": "https://opensource.org/licenses/MIT",
+    }
+)
+
+tags_metadata = [
+    {"name": "General", "description": "General endpoints for the platform."},
+    {"name": "Characters", "description": "Endpoints related to Spirit Blossom characters."},
+    {"name": "Rankings", "description": "Endpoints for tier lists and community rankings."},
+]
 
 # Try to import supabase
 try:
@@ -32,18 +50,18 @@ app.mount("/public", StaticFiles(directory="public"), name="public")
 # Templates
 templates = Jinja2Templates(directory="templates")
 
-@app.get("/")
+@app.get("/", tags=["General"])
 async def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "title": "Spirit Blossom Hub"})
 
-@app.get("/characters")
+@app.get("/characters", tags=["Characters"])
 async def characters(request: Request):
     characters = []
     if supabase:
         characters = character_manager.get_all_characters()
     return templates.TemplateResponse("characters.html", {"request": request, "characters": characters, "title": "Character Hub"})
 
-@app.get("/tier-lists")
+@app.get("/tier-lists", tags=["Rankings"])
 async def tier_lists(request: Request):
     tier_lists = []
     if supabase:
@@ -54,7 +72,7 @@ async def tier_lists(request: Request):
             pass
     return templates.TemplateResponse("tier_lists.html", {"request": request, "tier_lists": tier_lists, "title": "Tier Lists"})
 
-@app.get("/resources")
+@app.get("/resources", tags=["General"])
 async def resources(request: Request):
     return templates.TemplateResponse("resources.html", {"request": request, "title": "Community Resources"})
 

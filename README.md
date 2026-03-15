@@ -1,6 +1,6 @@
 # Spirit Blossom Hub
 
-A comprehensive platform for Spirit Blossom enthusiasts to explore character profiles, track meta-tier lists, and engage with community resources. Built with modern web technologies for a seamless, high-performance experience.
+A comprehensive platform for Spirit Blossom enthusiasts to explore character profiles, track meta-tier lists, and engage with community resources. Built with modern Python web technologies for a seamless, high-performance experience.
 
 ## ✨ Features
 
@@ -13,8 +13,8 @@ A comprehensive platform for Spirit Blossom enthusiasts to explore character pro
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
-- npm or bun
+- Python 3.8 or higher
+- pip
 
 ### Installation
 
@@ -28,22 +28,20 @@ A comprehensive platform for Spirit Blossom enthusiasts to explore character pro
    ```
 3. Install dependencies:
    ```bash
-   npm install
+   pip install -r requirements.txt
    ```
-4. Start the development server:
+4. Set up environment variables:
+   Create a `.env` file with your Supabase credentials.
+5. Start the development server:
    ```bash
-   npm run dev
+   uvicorn main:app --reload
    ```
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [React](https://reactjs.org/) with [Vite](https://vitejs.dev/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
-- **State Management**: [TanStack Query](https://tanstack.com/query/latest)
-- **Backend/DB**: [Supabase](https://supabase.com/)
-
+- **Framework**: [FastAPI](https://fastapi.tiangolo.com/) with [Jinja2](https://jinja.palletsprojects.com/)
+- **Language**: [Python](https://www.python.org/)
+- **Styling**: Plain CSS
 ## 🤝 Contributing
 
 Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.

@@ -1,118 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="icon" href="/public/favicon.ico">
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f5f5f5;
-            min-height: 100vh;
-        }
-        .nav {
-            background: white;
-            padding: 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
-        }
-        .nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .nav a:hover, .nav a.active {
-            background: #667eea;
-            color: white;
-        }
-        .content {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        .tier-list {
-            margin-bottom: 2rem;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .tier-header {
-            background: #667eea;
-            color: white;
-            padding: 1rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        .tier-characters {
-            padding: 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .character-tag {
-            background: #f0f0f0;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 500;
-        }
-        .tier-s {
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
-        }
-        .tier-a {
-            background: linear-gradient(45deg, #4ade80, #22c55e);
-        }
-        .tier-b {
-            background: linear-gradient(45deg, #60a5fa, #3b82f6);
-        }
-        .tier-c {
-            background: linear-gradient(45deg, #f87171, #ef4444);
-        }
-    </style>
-</head>
-<body>
-    <nav class="nav">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/characters">Character Hub</a></li>
-            <li><a href="/tier-lists" class="active">Tier Lists</a></li>
-            <li><a href="/resources">Resources</a></li>
-        </ul>
-    </nav>
+{% extends "base.html" %}
 
-    <main class="content">
-        <h1>Tier Lists</h1>
-        <p>Real-time tracking of character standings and community ratings.</p>
+{% block content %}
+<section class="section-padding">
+    <div class="container">
+        <header class="mb-5 text-center">
+            <h1 class="fw-bold mb-3"><span class="gradient-text">Tier</span> Lists</h1>
+            <p class="text-secondary lead mx-auto" style="max-width: 600px;">Real-time tracking of character standings and community ratings updated daily.</p>
+        </header>
 
         {% for tier_list in tier_lists %}
-        <div class="tier-list">
-            <div class="tier-header">{{ tier_list.name }}</div>
-            <div class="tier-characters">
-                {% for character in tier_list.characters %}
-                <span class="character-tag tier-{{ character.tier.lower() }}">{{ character.name }}</span>
-                {% endfor %}
+        <div class="glass-card mb-4 overflow-hidden border-0 p-0">
+            <div class="px-4 py-3 border-bottom border-light border-opacity-10 d-flex align-items-center justify-content-between" style="background: rgba(255,255,255,0.02);">
+                <h2 class="h5 fw-bold mb-0">{{ tier_list.name }}</h2>
+                <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-3 py-2 rounded-pill">Active Season</span>
+            </div>
+            <div class="p-4">
+                <div class="d-flex flex-wrap gap-2">
+                    {% for character in tier_list.characters %}
+                    <div class="tier-tag tier-{{ character.tier.lower() }} d-flex align-items-center gap-2 px-3 py-2 rounded-3">
+                        <span class="tier-indicator"></span>
+                        <span class="fw-bold">{{ character.tier }}</span>
+                        <span class="text-white text-opacity-75 ms-1">{{ character.name }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
         {% endfor %}
 
         {% if not tier_lists %}
-        <p>No tier lists found. Please check your database connection.</p>
+        <div class="text-center py-5">
+            <div class="glass-card d-inline-block px-5 py-4">
+                <i class="fa-solid fa-list-check fa-3x mb-3 text-secondary"></i>
+                <h3 class="h5">No tier lists found</h3>
+                <p class="text-secondary">Explore our characters and check back soon for rankings.</p>
+            </div>
+        </div>
         {% endif %}
-    </main>
-</body>
-</html>
+    </div>
+</section>
+
+<style>
+.tier-tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tier-tag:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.tier-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.tier-s .tier-indicator { background: #ffd700; box-shadow: 0 0 10px #ffd700; }
+.tier-a .tier-indicator { background: #4ade80; box-shadow: 0 0 10px #4ade80; }
+.tier-b .tier-indicator { background: #60a5fa; box-shadow: 0 0 10px #60a5fa; }
+.tier-c .tier-indicator { background: #f87171; box-shadow: 0 0 10px #f87171; }
+
+.tier-s { border-color: rgba(255, 215, 0, 0.2); }
+.tier-a { border-color: rgba(74, 222, 128, 0.2); }
+.tier-b { border-color: rgba(96, 165, 250, 0.2); }
+.tier-c { border-color: rgba(248, 113, 113, 0.2); }
+</style>
+{% endblock %}

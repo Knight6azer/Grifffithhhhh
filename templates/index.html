@@ -1,132 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="icon" href="/public/favicon.ico">
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        .hero {
-            background-image: url('/static/hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        .nav {
-            background: rgba(255,255,255,0.9);
-            padding: 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
-        }
-        .nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .nav a:hover {
-            background: #667eea;
-            color: white;
-        }
-        .content {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .feature {
-            text-align: center;
-            padding: 2rem;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-        .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        .feature h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-    </style>
-</head>
-<body>
-    <nav class="nav">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/characters">Character Hub</a></li>
-            <li><a href="/tier-lists">Tier Lists</a></li>
-            <li><a href="/resources">Resources</a></li>
-        </ul>
-    </nav>
+{% extends "base.html" %}
 
-    <section class="hero">
-        <div>
-            <h1>Spirit Blossom Hub</h1>
-            <p>A comprehensive platform for Spirit Blossom enthusiasts</p>
+{% block content %}
+<section class="hero-section text-center">
+    <div class="container">
+        <h1 class="hero-title fade-in"><span class="gradient-text">Spirit Blossom</span> Hub</h1>
+        <p class="lead text-muted mb-5 mx-auto" style="max-width: 600px;">
+            A comprehensive platform for Spirit Blossom enthusiasts to explore character profiles, track meta-tier lists, and engage with community resources.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="/characters" class="btn btn-premium">Explore Characters</a>
+            <a href="/tier-lists" class="btn btn-outline-light px-4 py-2 rounded-3" style="border-radius: 12px !important;">View Tier Lists</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <main class="content">
-        <h2>Welcome to Spirit Blossom Hub</h2>
-        <p>Explore character profiles, track meta-tier lists, and engage with community resources in our modern, high-performance platform.</p>
-
-        <div class="features">
-            <div class="feature">
-                <h3>Character Hub</h3>
-                <p>Detailed profiles and lore for all Spirit Blossom representatives.</p>
-                <a href="/characters">Explore Characters</a>
+<section class="section-padding bg-darker">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="glass-card h-100">
+                    <div class="icon-box mb-4">
+                        <i class="fa-solid fa-users-viewfinder fa-2x gradient-text"></i>
+                    </div>
+                    <h3>Character Hub</h3>
+                    <p class="text-secondary">Detailed profiles and lore for all Spirit Blossom representatives across various events.</p>
+                    <a href="/characters" class="text-primary text-decoration-none fw-bold mt-auto">Learn More <i class="fas fa-arrow-right ms-2 transition-icon"></i></a>
+                </div>
             </div>
-            <div class="feature">
-                <h3>Tier Lists</h3>
-                <p>Real-time tracking of character standings and community ratings.</p>
-                <a href="/tier-lists">View Tier Lists</a>
+            <div class="col-md-4">
+                <div class="glass-card h-100">
+                    <div class="icon-box mb-4">
+                        <i class="fa-solid fa-ranking-star fa-2x gradient-text"></i>
+                    </div>
+                    <h3>Tier Lists</h3>
+                    <p class="text-secondary">Real-time tracking of character standings and community ratings updated daily.</p>
+                    <a href="/tier-lists" class="text-primary text-decoration-none fw-bold mt-auto">Learn More <i class="fas fa-arrow-right ms-2 transition-icon"></i></a>
+                </div>
             </div>
-            <div class="feature">
-                <h3>Community Resources</h3>
-                <p>Integrated tools and guides for the Spirit Blossom event.</p>
-                <a href="/resources">Access Resources</a>
+            <div class="col-md-4">
+                <div class="glass-card h-100">
+                    <div class="icon-box mb-4">
+                        <i class="fa-solid fa-book-open fa-2x gradient-text"></i>
+                    </div>
+                    <h3>Resources</h3>
+                    <p class="text-secondary">Integrated tools, guides, and community-driven content for the Spirit Blossom event.</p>
+                    <a href="/resources" class="text-primary text-decoration-none fw-bold mt-auto">Learn More <i class="fas fa-arrow-right ms-2 transition-icon"></i></a>
+                </div>
             </div>
         </div>
-    </main>
-</body>
-</html>
+    </div>
+</section>
+{% endblock %}

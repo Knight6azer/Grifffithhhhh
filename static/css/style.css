@@ -1,14 +1,15 @@
-:root {
     --primary: #d4a5f9;
     --primary-dark: #b18cdf;
     --secondary: #a2d2ff;
     --accent: #ffafcc;
-    --bg-dark: #121216;
-    --bg-card: rgba(30, 30, 40, 0.7);
+    --bg-dark: #0a0a0c;
+    --bg-darker: #050507;
+    --bg-card: rgba(20, 20, 28, 0.6);
     --text-light: #f8f9fa;
-    --text-muted: #adb5bd;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-muted: #8a8a9e;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -37,13 +38,15 @@ body {
     color: var(--text-muted) !important;
     font-weight: 500;
     margin: 0 0.5rem;
-    transition: all 0.3s ease;
-    border-radius: 8px;
+    transition: var(--transition-smooth);
+    border-radius: 10px;
+    padding: 0.6rem 1.2rem !important;
 }
 
 .nav-link:hover, .nav-link.active {
     color: var(--primary) !important;
     background: var(--glass-bg);
+    transform: translateY(-1px);
 }
 
 /* Hero Section */
@@ -63,17 +66,26 @@ body {
 /* Cards */
 .glass-card {
     background: var(--bg-card);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
     border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 2rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 24px;
+    padding: 2.5rem;
+    transition: var(--transition-smooth);
 }
 
 .glass-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary);
-    box-shadow: 0 10px 30px rgba(212, 165, 249, 0.1);
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(212, 165, 249, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                0 0 20px rgba(212, 165, 249, 0.1);
+}
+
+.bg-darker {
+    background-color: var(--bg-darker);
+}
+
+.transition-all {
+    transition: var(--transition-smooth);
 }
 
 /* Buttons */

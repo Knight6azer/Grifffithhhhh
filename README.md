@@ -1,4 +1,4 @@
-# 🌸 Spirit Blossom Hub 2.0
+# 🌸 Spirit Blossom Hub 2.1
 
 A premium, high-performance platform for Spirit Blossom enthusiasts. Explore detailed character lore, track real-time meta rankings, and access curated community resources—all in one immersive experience.
 
@@ -6,17 +6,17 @@ A premium, high-performance platform for Spirit Blossom enthusiasts. Explore det
 
 ## ✨ Premium Features
 
-- **🎭 Character Sanctuary**: Deep dives into every Spirit Blossom representative, featuring rich lore and interactive profiles.
+- **🎭 Character Sanctuary**: Deep dives into every Spirit Blossom representative, featuring rich lore, interactive profiles, and real-time search.
 - **📊 Astral Tier Lists**: Live meta-analysis and community-driven rankings for the current season.
 - **📚 Community Grimoire**: Curated guides, build calculators, and event calendars to maximize your progression.
-- **💎 Glassmorphic UI**: A modern, responsive interface designed with the "Spirit Blossom" aesthetic—vibrant, ethereal, and seamless.
-- **⚡ Fast-API Backbone**: Lightning-fast performance powered by Python's leading async framework.
+- **💎 Refined Glassmorphism**: A modern, responsive interface with high-end micro-animations and a seamless dark aesthetic.
+- **⚡ Async Architecture**: Built with FastAPI and structured for scalability with centralized configuration and modular data management.
 
 ## 🛠️ Tech Stack
 
 - **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Async Python Framework)
 - **Database**: [Supabase](https://supabase.com/) (PostgreSQL & Real-time)
-- **Frontend**: Jinja2 Templates, Bootstrap 5, Custom Glassmorphic CSS
+- **Frontend**: Jinja2 Templates, Bootstrap 5, Custom Premium CSS
 - **Icons**: FontAwesome 6 & Lucide
 - **Typography**: Outfit (Google Fonts)
 

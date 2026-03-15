@@ -25,6 +25,16 @@ class CharacterManager:
             print(f"Error fetching character {character_id}: {e}")
             return {}
 
+    def search_characters(self, query: str) -> List[Dict[str, Any]]:
+        """Search characters by name (case-insensitive)."""
+        try:
+            # Note: Supabase 'ilike' for case-insensitive search
+            response = self.supabase.table("characters").select("*").ilike("name", f"%{query}%").execute()
+            return response.data
+        except Exception as e:
+            print(f"Error searching characters with query '{query}': {e}")
+            return []
+
     def create_character(self, character_data: Dict[str, Any]) -> Dict[str, Any]:
         """Create a new character."""
         try:

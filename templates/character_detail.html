@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="section-padding">
+    <div class="container">
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/characters" class="text-secondary text-decoration-none">Characters</a></li>
+                <li class="breadcrumb-item active text-light" aria-current="page">{{ character.name }}</li>
+            </ol>
+        </nav>
+
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <div class="character-preview-card glass-card p-0 overflow-hidden">
+                    <img src="{{ character.image_url or '/public/placeholder.svg' }}" alt="{{ character.name }}" class="img-fluid w-100 character-image">
+                    <div class="p-4">
+                        <h1 class="fw-bold mb-1">{{ character.name }}</h1>
+                        <p class="text-primary fw-bold mb-0">{{ character.role|upper }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="glass-card">
+                    <h2 class="h3 fw-bold mb-4 pb-2 border-bottom border-light border-opacity-10">Spiritual Lore</h2>
+                    <p class="lead text-light opacity-75 mb-4">
+                        {{ character.lore or character.description }}
+                    </p>
+                    
+                    <div class="stats-grid mt-5">
+                        <div class="row g-4">
+                            <div class="col-6 col-md-4">
+                                <div class="stat-item p-3 rounded-3 bg-white bg-opacity-5 border border-light border-opacity-10 text-center">
+                                    <span class="d-block text-secondary small text-uppercase mb-1">Rarity</span>
+                                    <span class="fw-bold text-warning">Mythic</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="stat-item p-3 rounded-3 bg-white bg-opacity-5 border border-light border-opacity-10 text-center">
+                                    <span class="d-block text-secondary small text-uppercase mb-1">Difficulty</span>
+                                    <span class="fw-bold text-info">Moderate</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="stat-item p-3 rounded-3 bg-white bg-opacity-5 border border-light border-opacity-10 text-center">
+                                    <span class="d-block text-secondary small text-uppercase mb-1">Affiliation</span>
+                                    <span class="fw-bold text-accent">Ionia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <a href="/characters" class="btn btn-premium d-inline-flex align-items-center gap-2">
+                            <i class="fas fa-arrow-left"></i> Back to Hub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.character-image {
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.character-preview-card:hover .character-image {
+    transform: scale(1.05);
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--text-muted);
+}
+</style>
+{% endblock %}

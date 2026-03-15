@@ -3,20 +3,28 @@
 {% block content %}
 <section class="section-padding">
     <div class="container">
-        <header class="mb-5">
-            <h1 class="fw-bold mb-3"><span class="gradient-text">Character</span> Hub</h1>
-            <p class="text-secondary lead">Detailed profiles and lore for all Spirit Blossom representatives.</p>
+        <header class="mb-5 d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-4">
+            <div>
+                <h1 class="fw-bold mb-3"><span class="gradient-text">Character</span> Hub</h1>
+                <p class="text-secondary lead mb-0">Detailed profiles and lore for all Spirit Blossom representatives.</p>
+            </div>
+            <div class="search-container">
+                <form action="/characters" method="get" class="position-relative">
+                    <input type="text" name="q" class="form-control bg-darker border-light border-opacity-10 text-light rounded-pill px-4 py-2" placeholder="Search characters..." value="{{ search_query }}">
+                    <button type="submit" class="btn position-absolute end-0 top-0 h-100 text-secondary border-0"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
         </header>
 
         <div class="row g-4">
             {% for character in characters %}
             <div class="col-md-4">
-                <div class="glass-card h-100">
+                <div class="glass-card h-100 d-flex flex-column">
                     <h2 class="h4 fw-bold mb-2">{{ character.name }}</h2>
                     <p class="text-primary small fw-bold mb-3">{{ character.role|upper }}</p>
-                    <p class="text-secondary small line-clamp">{{ character.description }}</p>
-                    <div class="mt-4 pt-4 border-top border-secondary opacity-25">
-                        <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-4">View Profile</a>
+                    <p class="text-secondary small line-clamp mb-4">{{ character.description }}</p>
+                    <div class="mt-auto pt-4 border-top border-secondary opacity-25">
+                        <a href="/characters/{{ character.id }}" class="btn btn-sm btn-outline-primary rounded-pill px-4 transition-all">View Profile</a>
                     </div>
                 </div>
             </div>

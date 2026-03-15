@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tier List - Spirit Blossom Hub</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container mx-auto px-4">
+            <h1>Spirit Blossom Hub</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/characters">Characters</a></li>
+                <li><a href="/tier-list">Tier List</a></li>
+                <li><a href="/auth">Auth</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <h1>Tier List</h1>
+        {% for tier in tier_order %}
+        <div class="tier-section">
+            <h2 class="tier {{ tier }}">{{ tier }}</h2>
+            <div class="characters-grid">
+                {% for char in characters %}
+                {% if char.tier == tier %}
+                <div class="character-card">
+                    <a href="/characters/{{ char.id }}">
+                        <img src="{{ char.image }}" alt="{{ char.name }}">
+                        <h3>{{ char.name }}</h3>
+                        <p>{{ char.anime }}</p>
+                    </a>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Spirit Blossom Hub</p>
+    </footer>
+</body>
+</html>

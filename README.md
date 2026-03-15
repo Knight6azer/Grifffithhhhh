@@ -1,63 +1,65 @@
-# Spirit Blossom Hub
+# 🌸 Spirit Blossom Hub 2.0
 
-A comprehensive platform for Spirit Blossom enthusiasts to explore character profiles, track meta-tier lists, and engage with community resources. Built with modern Python web technologies for a seamless, high-performance experience.
+A premium, high-performance platform for Spirit Blossom enthusiasts. Explore detailed character lore, track real-time meta rankings, and access curated community resources—all in one immersive experience.
 
-## ✨ Features
+![Hero Preview](/static/hero-bg.jpg)
 
-- **Character Hub**: Detailed profiles and lore for all Spirit Blossom representatives.
-- **Tier Lists**: Real-time tracking of character standings and community ratings.
-- **Community Resources**: Integrated tools and guides for the Spirit Blossom event.
-- **Responsive Design**: Optimized for mobile and desktop viewing.
+## ✨ Premium Features
+
+- **🎭 Character Sanctuary**: Deep dives into every Spirit Blossom representative, featuring rich lore and interactive profiles.
+- **📊 Astral Tier Lists**: Live meta-analysis and community-driven rankings for the current season.
+- **📚 Community Grimoire**: Curated guides, build calculators, and event calendars to maximize your progression.
+- **💎 Glassmorphic UI**: A modern, responsive interface designed with the "Spirit Blossom" aesthetic—vibrant, ethereal, and seamless.
+- **⚡ Fast-API Backbone**: Lightning-fast performance powered by Python's leading async framework.
+
+## 🛠️ Tech Stack
+
+- **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Async Python Framework)
+- **Database**: [Supabase](https://supabase.com/) (PostgreSQL & Real-time)
+- **Frontend**: Jinja2 Templates, Bootstrap 5, Custom Glassmorphic CSS
+- **Icons**: FontAwesome 6 & Lucide
+- **Typography**: Outfit (Google Fonts)
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Python 3.8 or higher
-- pip (Python package installer)
+- Python 3.9+
+- Pip & Virtualenv
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Knight6azer/Grifffithhhhh.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd Grifffithhhhh
-   ```
-3. Create a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-4. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-5. Set up environment variables:
-   - Copy `.env.example` to `.env` and fill in your Supabase credentials
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/Knight6azer/Grifffithhhhh.git
+    cd Grifffithhhhh
+    ```
 
-6. Run the development server:
-   ```bash
-   python main.py
-   ```
+2.  **Environment Setup**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # Windows: venv\Scripts\activate
+    pip install -r requirements.txt
+    ```
 
-The application will be available at `http://localhost:8000`.
+3.  **Supabase Configuration**
+    Create a `.env` file based on `.env.example` and populate your credentials:
+    ```env
+    SUPABASE_URL=your_project_url
+    SUPABASE_ANON_KEY=your_anon_key
+    ```
 
-## 🛠️ Tech Stack
-
-- **Framework**: [FastAPI](https://fastapi.tiangolo.com/) (high-performance async web API)
-- **Language**: [Python](https://www.python.org/) 3.8+
-- **Templates**: [Jinja2](https://jinja.palletsprojects.com/) (modern templating engine)
-- **Database**: [Supabase](https://supabase.com/) (PostgreSQL with real-time capabilities)
-- **Styling**: Custom CSS with responsive design
-- **ASGI Server**: [Uvicorn](https://www.uvicorn.org/) (lightning-fast ASGI server)
+4.  **Ignite the Server**
+    ```bash
+    python main.py
+    ```
+    Visit `http://localhost:8000` to witness the blossom.
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+We welcome contributions from the spirit world! Check out [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Distributed under the MIT License. See `LICENSE` for more information.
+

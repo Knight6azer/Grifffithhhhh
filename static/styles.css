@@ -1,0 +1,191 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    background-image: url('/static/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.character-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.character-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.character-card h3 {
+    margin: 0.5rem;
+}
+
+.character-card p {
+    margin: 0.5rem;
+    color: #666;
+}
+
+.tier {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.tier.S\\+ { background-color: #ff0000; color: white; }
+.tier.S { background-color: #ff4500; color: white; }
+.tier.A { background-color: #ffa500; color: black; }
+
+.back-link {
+    color: #666;
+    text-decoration: none;
+}
+
+.character-profile {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.character-profile img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    float: left;
+    margin-right: 2rem;
+}
+
+.character-profile h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.character-profile .anime {
+    color: #666;
+    font-style: italic;
+}
+
+.character-profile .power {
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.character-profile .description {
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.character-profile ul {
+    list-style: disc;
+    margin-left: 1rem;
+}
+
+.stats {
+    margin: 1rem 0;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.stat span {
+    width: 100px;
+}
+
+.bar {
+    background-color: #e74c3c;
+    height: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-left: 5px solid #e74c3c;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}

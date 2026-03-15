@@ -14,7 +14,7 @@ A comprehensive platform for Spirit Blossom enthusiasts to explore character pro
 ### Prerequisites
 
 - Python 3.8 or higher
-- pip
+- pip (Python package installer)
 
 ### Installation
 
@@ -26,22 +26,34 @@ A comprehensive platform for Spirit Blossom enthusiasts to explore character pro
    ```bash
    cd Grifffithhhhh
    ```
-3. Install dependencies:
+3. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+4. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-4. Set up environment variables:
-   Create a `.env` file with your Supabase credentials.
-5. Start the development server:
+5. Set up environment variables:
+   - Copy `.env.example` to `.env` and fill in your Supabase credentials
+
+6. Run the development server:
    ```bash
-   uvicorn main:app --reload
+   python main.py
    ```
+
+The application will be available at `http://localhost:8000`.
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [FastAPI](https://fastapi.tiangolo.com/) with [Jinja2](https://jinja.palletsprojects.com/)
-- **Language**: [Python](https://www.python.org/)
-- **Styling**: Plain CSS
+- **Framework**: [FastAPI](https://fastapi.tiangolo.com/) (high-performance async web API)
+- **Language**: [Python](https://www.python.org/) 3.8+
+- **Templates**: [Jinja2](https://jinja.palletsprojects.com/) (modern templating engine)
+- **Database**: [Supabase](https://supabase.com/) (PostgreSQL with real-time capabilities)
+- **Styling**: Custom CSS with responsive design
+- **ASGI Server**: [Uvicorn](https://www.uvicorn.org/) (lightning-fast ASGI server)
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.

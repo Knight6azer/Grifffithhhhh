@@ -3,43 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Characters - Spirit Blossom Hub</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <title>{{ title }}</title>
+    <link rel="icon" href="/public/favicon.ico">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            min-height: 100vh;
+        }
+        .nav {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav a:hover, .nav a.active {
+            background: #667eea;
+            color: white;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .character-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .character-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .character-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .character-role {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        .character-description {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container mx-auto px-4">
-            <h1>Spirit Blossom Hub</h1>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/characters">Characters</a></li>
-                <li><a href="/tier-list">Tier List</a></li>
-                <li><a href="/auth">Auth</a></li>
-            </ul>
-        </div>
+    <nav class="nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/characters" class="active">Character Hub</a></li>
+            <li><a href="/tier-lists">Tier Lists</a></li>
+            <li><a href="/resources">Resources</a></li>
+        </ul>
     </nav>
 
-    <div class="container mx-auto px-4 py-8">
-        <a href="/" class="back-link">&larr; Home</a>
-        <h1>CHARACTER PROFILES</h1>
-        <p>Explore the legends. Click any character to see full stats, abilities, and lore.</p>
+    <main class="content">
+        <h1>Character Hub</h1>
+        <p>Detailed profiles and lore for all Spirit Blossom representatives.</p>
 
         <div class="characters-grid">
-            {% for char in characters %}
+            {% for character in characters %}
             <div class="character-card">
-                <a href="/characters/{{ char.id }}">
-                    <img src="{{ char.image }}" alt="{{ char.name }}">
-                    <h3>{{ char.name }}</h3>
-                    <p>{{ char.anime }}</p>
-                    <span class="tier {{ char.tier }}">{{ char.tier }}</span>
-                </a>
+                <h2 class="character-name">{{ character.name }}</h2>
+                <p class="character-role">{{ character.role }}</p>
+                <p class="character-description">{{ character.description }}</p>
             </div>
             {% endfor %}
         </div>
-    </div>
 
-    <footer>
-        <p>&copy; 2024 Spirit Blossom Hub</p>
-    </footer>
+        {% if not characters %}
+        <p>No characters found. Please check your database connection.</p>
+        {% endif %}
+    </main>
 </body>
 </html>

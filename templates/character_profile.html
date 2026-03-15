@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ character.name }} - Spirit Blossom Hub</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container mx-auto px-4">
+            <h1>Spirit Blossom Hub</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/characters">Characters</a></li>
+                <li><a href="/tier-list">Tier List</a></li>
+                <li><a href="/auth">Auth</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <a href="/characters" class="back-link">&larr; Back to Characters</a>
+        {% if character %}
+        <div class="character-profile">
+            <img src="{{ character.image }}" alt="{{ character.name }}">
+            <h1>{{ character.name }}</h1>
+            <p class="anime">{{ character.anime }}</p>
+            <p class="power">{{ character.power }}</p>
+            <span class="tier {{ character.tier }}">{{ character.tier }}</span>
+            <p class="description">{{ character.description }}</p>
+            <h2>Abilities</h2>
+            <ul>
+                {% for ability in character.abilities %}
+                <li>{{ ability }}</li>
+                {% endfor %}
+            </ul>
+            <h2>Stats</h2>
+            <div class="stats">
+                {% for stat, value in character.stats.items() %}
+                <div class="stat">
+                    <span>{{ stat|title }}</span>
+                    <div class="bar" style="width: {{ value }}%">{{ value }}</div>
+                </div>
+                {% endfor %}
+            </div>
+            <blockquote>{{ character.quote }}</blockquote>
+        </div>
+        {% else %}
+        <p>Character not found.</p>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Spirit Blossom Hub</p>
+    </footer>
+</body>
+</html>
